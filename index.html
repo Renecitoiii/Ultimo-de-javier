@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portal de repaso y mapa de módulos para 3.º BTV Desarrollo de Software B, INDEL.">
+  <meta name="theme-color" content="#080d18">
+  <title>HUB 3DS·B - Cimientos del Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="data/modulos.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="inicio">
+    <div class="topbar shell">
+      <a class="brand" href="#inicio" aria-label="HUB 3DS·B, inicio">
+        <span class="brand-mark" aria-hidden="true">H</span>
+        <span class="brand-copy">
+          <span class="brand-name">HUB <strong>3DS·B</strong></span>
+          <span class="brand-school">INDEL · Desarrollo de Software</span>
+        </span>
+      </a>
+      <span class="version-chip"><span class="status-dot" aria-hidden="true"></span> PORTAL v0.2</span>
+    </div>
+
+    <div class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> 3.º BTV · DESARROLLO DE SOFTWARE «B»</p>
+        <h1>HUB 3DS·B <span>- Cimientos del Portal</span></h1>
+        <p class="hero-intro">Un espacio de repaso, recursos y seguimiento para construir conocimiento, módulo a módulo.</p>
+        <a class="primary-link" href="#mapa-modulos">Explorar el mapa <span aria-hidden="true">↘</span></a>
+      </div>
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="orbit orbit-outer"></div>
+        <div class="orbit orbit-inner"></div>
+        <span class="orbit-core">3DS<br><b>·B</b></span>
+        <span class="orbit-label orbit-label-top">APRENDER</span>
+        <span class="orbit-label orbit-label-bottom">CONSTRUIR</span>
+      </div>
+    </div>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <div class="shell nav-inner">
+        <a class="nav-link active" href="#inicio"><span>01</span> Inicio</a>
+        <a class="nav-link" href="#mapa-modulos"><span>02</span> Mapa de módulos</a>
+        <a class="nav-link" href="#equipo"><span>03</span> Equipo</a>
+        <a class="nav-link" href="#bitacora"><span>04</span> Bitácora</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="modules-section shell" id="mapa-modulos" aria-labelledby="modules-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> RUTA ACADÉMICA</p>
+          <h2 id="modules-title">Mapa de <span>módulos</span></h2>
+          <p class="section-description">Una vista inicial de los contenidos del año. La asignación y el detalle se mantienen provisionales.</p>
+        </div>
+        <span class="section-index" aria-hidden="true">01 / 04</span>
+      </div>
+      <div class="module-grid" id="contenedor-modulos" aria-live="polite">
+        <p class="loading-message">Cargando módulos...</p>
+      </div>
+    </section>
+
+    <section class="team-section" id="equipo" aria-labelledby="team-title">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> QUIÉNES LO HACEN POSIBLE</p>
+            <h2 id="team-title">Equipo <span>3DS·B</span></h2>
+            <p class="section-description">Los nombres de integrantes se incorporarán cuando el equipo confirme la distribución.</p>
+          </div>
+          <span class="section-index" aria-hidden="true">02 / 04</span>
+        </div>
+        <div class="team-grid">
+          <article class="team-card">
+            <span class="team-number">01</span>
+            <div><h3>Líder Git</h3><p>Integrante por confirmar</p></div>
+            <span class="team-accent accent-cyan" aria-hidden="true"></span>
+          </article>
+          <article class="team-card">
+            <span class="team-number">02</span>
+            <div><h3>Diseñador UI</h3><p>Integrante por confirmar</p></div>
+            <span class="team-accent accent-magenta" aria-hidden="true"></span>
+          </article>
+          <article class="team-card">
+            <span class="team-number">03</span>
+            <div><h3>Curador de contenido</h3><p>Integrante por confirmar</p></div>
+            <span class="team-accent accent-green" aria-hidden="true"></span>
+          </article>
+          <article class="team-card">
+            <span class="team-number">04</span>
+            <div><h3>QA</h3><p>Integrante por confirmar</p></div>
+            <span class="team-accent accent-blue" aria-hidden="true"></span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="log-section shell" id="bitacora" aria-labelledby="log-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> REGISTRO DE AVANCE</p>
+          <h2 id="log-title">Bitácora <span>del proyecto</span></h2>
+          <p class="section-description">Primeros pasos en la construcción del portal de repaso.</p>
+        </div>
+        <span class="section-index" aria-hidden="true">03 / 04</span>
+      </div>
+      <ol class="timeline">
+        <li class="timeline-entry">
+          <span class="timeline-marker" aria-hidden="true"></span>
+          <div class="timeline-meta"><span>DÍA 01</span><span>VERSIÓN 0.2</span></div>
+          <h3>Cimientos del HUB</h3>
+          <p>Se define la estructura inicial, la identidad visual, el mapa provisional de módulos y los roles del equipo.</p>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <a class="footer-brand" href="#inicio">HUB <strong>3DS·B</strong></a>
+      <p>3.º BTV Desarrollo de Software «B» <span aria-hidden="true">·</span> INDEL</p>
+      <p class="footer-version">CIMIENTOS DEL PORTAL <span>v0.2</span></p>
+    </div>
+  </footer>
+</body>
+</html>
