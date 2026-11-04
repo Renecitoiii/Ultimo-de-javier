@@ -24,5 +24,31 @@ const ESTRUCTURAS_DATOS = [
       lenguaje: "JavaScript",
       codigo: "const nodoTres = { valor: 3, siguiente: null };\nconst nodoDos = { valor: 2, siguiente: nodoTres };\nconst cabeza = { valor: 1, siguiente: nodoDos };\nconsole.log(cabeza.siguiente.valor);"
     }
+  },
+  {
+    id: "pila",
+    nombre: "Pila",
+    categoria: "Lineal",
+    resumen: "Colección que sigue la regla LIFO: el último elemento agregado es el primero en salir.",
+    funcionamiento: "Se agrega y retira desde el mismo extremo, llamado tope. push y pop suelen operar en O(1).",
+    ventajas: ["Modela acciones de deshacer y llamadas de funciones.", "Sus operaciones principales son simples y eficientes."],
+    consideraciones: ["No permite retirar directamente un elemento que esté debajo del tope.", "Conviene comprobar si está vacía antes de retirar."],
+    ejemplo: {
+      lenguaje: "JavaScript",
+      codigo: "const historial = [];\nhistorial.push(\"Inicio\");\nhistorial.push(\"Módulos\");\nconst pantallaAnterior = historial.pop();\nconsole.log(pantallaAnterior);"
+    }
+  },
+  {
+    id: "cola",
+    nombre: "Cola",
+    categoria: "Lineal",
+    resumen: "Colección que sigue la regla FIFO: el primer elemento agregado es el primero en salir.",
+    funcionamiento: "Los elementos nuevos se agregan al final y se atienden desde el frente. Una cola implementada con nodos puede encolar y desencolar en O(1).",
+    ventajas: ["Representa turnos, tareas pendientes y solicitudes en orden de llegada.", "Separa la llegada de elementos de su atención."],
+    consideraciones: ["Retirar del inicio de un arreglo puede implicar mover elementos.", "Una cola necesita controlar correctamente su frente y su final."],
+    ejemplo: {
+      lenguaje: "JavaScript",
+      codigo: "const turnos = [];\nturnos.push(\"Ana\");\nturnos.push(\"Luis\");\nconst siguienteTurno = turnos.shift();\nconsole.log(siguienteTurno);"
+    }
   }
 ];
