@@ -2,6 +2,7 @@ const QUIZ_PROGRESS_KEY = "hub3dsb-quiz-progress-v05";
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("contenedor-modulos");
+  const structuresContainer = document.getElementById("contenedor-estructuras");
   const dialog = document.getElementById("modal-ficha");
   const dialogTitle = document.getElementById("modal-titulo");
   const dialogContent = document.getElementById("contenido-ficha");
@@ -13,6 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!container) {
     console.error('No se encontró el contenedor "#contenedor-modulos".');
     return;
+  }
+
+  if (!structuresContainer) {
+    console.error('No se encontró el contenedor "#contenedor-estructuras".');
   }
 
   if (typeof MODULOS_INICIALES === "undefined" || !Array.isArray(MODULOS_INICIALES)) {
@@ -34,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   renderCards();
+  renderStructures();
   renderSummary();
 
   closeButton.addEventListener("click", () => dialog.close());
@@ -98,6 +104,78 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderCards() {
     container.replaceChildren(...MODULOS_INICIALES.map(createModuleCard));
+  }
+
+  function renderStructures() {
+    if (!structuresContainer) {
+      return;
+    }
+
+    if (typeof ESTRUCTURAS_DATOS === "undefined" || !Array.isArray(ESTRUCTURAS_DATOS)) {
+      console.error("No se pudo cargar el catálogo de estructuras de datos.");
+      structuresContainer.replaceChildren(createMessage("No se pudo cargar esta sección. Intenta actualizar la página."));
+      return;
+    }
+
+    if (ESTRUCTURAS_DATOS.length === 0) {
+      structuresContainer.replaceChildren(createMessage("Pronto se agregarán estructuras de datos."));
+      return;
+    }
+
+    structuresContainer.replaceChildren(...ESTRUCTURAS_DATOS.map(createStructureCard));
+  }
+
+  function createStructureCard(structure) {
+    const card = document.createElement("article");
+    card.className = "structure-card";
+    card.dataset.category = structure.categoria;
+
+    const category = document.createElement("p");
+    category.className = "structure-category";
+    category.textContent = structure.categoria;
+
+    const title = document.createElement("h3");
+    title.textContent = structure.nombre;
+
+    const summary = document.createElement("p");
+    summary.className = "structure-summary";
+    summary.textContent = structure.resumen;
+
+    const details = document.createElement("details");
+    details.className = "structure-details";
+    const summaryLabel = document.createElement("summary");
+    summaryLabel.textContent = "Funcionamiento y ejemplo";
+
+    const explanation = document.createElement("p");
+    explanation.textContent = structure.funcionamiento;
+
+    const exampleLabel = document.createElement("h4");
+    exampleLabel.textContent = `Ejemplo en ${structure.ejemplo.lenguaje}`;
+    const code = document.createElement("pre");
+    const codeElement = document.createElement("code");
+    codeElement.textContent = structure.ejemplo.codigo;
+    code.append(codeElement);
+
+    const advantages = createStructureList("Ventajas", structure.ventajas);
+    const considerations = createStructureList("Consideraciones", structure.consideraciones);
+    details.append(summaryLabel, explanation, exampleLabel, code, advantages, considerations);
+    card.append(category, title, summary, details);
+    return card;
+  }
+
+  function createStructureList(title, values) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "structure-points";
+    const heading = document.createElement("h4");
+    heading.textContent = title;
+    const list = document.createElement("ul");
+    values.forEach((value) => {
+      const item = document.createElement("li");
+      item.textContent = value;
+      list.append(item);
+    });
+    wrapper.append(heading, list);
+    return wrapper;
   }
 
   function createModuleCard(module) {
