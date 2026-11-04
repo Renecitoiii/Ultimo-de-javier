@@ -69,6 +69,15 @@
           <p class="section-description">Conceptos esenciales para organizar información y elegir la forma adecuada de resolver un problema.</p>
         </div>
       </div>
+      <div class="structure-toolbar">
+        <label for="filtro-estructuras">Filtrar por tipo</label>
+        <select id="filtro-estructuras">
+          <option value="Todas">Todas</option>
+          <option value="Lineal">Lineales</option>
+          <option value="Jerárquica">Jerárquicas</option>
+        </select>
+        <span id="structure-count" class="structure-count" aria-live="polite"></span>
+      </div>
       <div class="structure-grid" id="contenedor-estructuras" aria-live="polite">
         <p class="loading-message">Cargando estructuras de datos...</p>
       </div>

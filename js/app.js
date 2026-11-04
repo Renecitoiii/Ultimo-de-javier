@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const summaryStats = document.getElementById("resumen-estadisticas");
   const summaryModules = document.getElementById("resumen-modulos");
   const saveStatus = document.getElementById("progress-save-status");
+  const structuresFilter = document.getElementById("filtro-estructuras");
+  const structureCount = document.getElementById("structure-count");
 
   if (!container) {
     console.error('No se encontró el contenedor "#contenedor-modulos".');
@@ -43,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderSummary();
 
   closeButton.addEventListener("click", () => dialog.close());
+  structuresFilter?.addEventListener("change", renderStructures);
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && dialog.open) {
       dialog.close();
@@ -122,7 +125,19 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    structuresContainer.replaceChildren(...ESTRUCTURAS_DATOS.map(createStructureCard));
+    const category = structuresFilter?.value ?? "Todas";
+    const visibleStructures = category === "Todas"
+      ? ESTRUCTURAS_DATOS
+      : ESTRUCTURAS_DATOS.filter((structure) => structure.categoria === category);
+    if (structureCount) {
+      structureCount.textContent = `${visibleStructures.length} ${visibleStructures.length === 1 ? "estructura" : "estructuras"}`;
+    }
+    if (visibleStructures.length === 0) {
+      structuresContainer.replaceChildren(createMessage("No hay estructuras en esta categoría."));
+      return;
+    }
+
+    structuresContainer.replaceChildren(...visibleStructures.map(createStructureCard));
   }
 
   function createStructureCard(structure) {

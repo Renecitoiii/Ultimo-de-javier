@@ -288,6 +288,30 @@ h2 {
   gap: 14px;
 }
 
+.structure-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.structure-toolbar select {
+  min-height: 36px;
+  padding: 6px 28px 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+
+.structure-count {
+  margin-left: auto;
+  color: var(--subtle);
+}
+
 .module-card {
   display: flex;
   min-width: 0;
