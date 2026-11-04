@@ -1,6 +1,6 @@
 # HUB 3DS·B
 
-Portal de estudio para 3.º BTV Desarrollo de Software «B» del INDEL. La versión actual es **v0.5**: una interfaz minimalista con fichas de módulos, cuestionarios, copas por aciertos y seguimiento del progreso.
+Portal de estudio para 3.º BTV Desarrollo de Software «B» del INDEL. La versión actual es **v0.6**: fichas de módulos, cuestionarios, seguimiento del progreso y una guía de estructuras de datos.
 
 **Portal publicado:** <https://renecitoiii.github.io/Ultimo-de-javier/>
 
@@ -12,6 +12,10 @@ Portal de estudio para 3.º BTV Desarrollo de Software «B» del INDEL. La versi
 | Profesor Arcides Canales | Gestión de bases de datos; Desarrollo de aplicaciones móviles; Ingeniería y calidad de software |
 
 Cada ficha incluye resumen, aprendizajes, instrumentos, programas, herramientas, recursos y un cuestionario de tres preguntas. Los períodos académicos aún están pendientes de confirmación. Las evidencias identifican páginas de estudio del portal; no sustituyen capturas o proyectos entregados en clase.
+
+## Estructuras de datos
+
+La sección de estructuras explica arreglos, listas enlazadas, pilas, colas y árboles binarios. Cada tema presenta su funcionamiento, ventajas, consideraciones y un ejemplo en JavaScript. Usa el filtro para alternar entre estructuras lineales y jerárquicas.
 
 ## Progreso y cuestionarios
 
@@ -26,7 +30,8 @@ Las versiones publicadas se conservan dentro del sitio:
 
 - [v0.2 · Cimientos del HUB](https://renecitoiii.github.io/Ultimo-de-javier/versiones/v0.2/)
 - [v0.4 · El portal cobra vida](https://renecitoiii.github.io/Ultimo-de-javier/versiones/v0.4/)
-- [v0.5 · Estudio y progreso](https://renecitoiii.github.io/Ultimo-de-javier/)
+- [v0.5 · Estudio y progreso](https://renecitoiii.github.io/Ultimo-de-javier/versiones/v0.5/)
+- [v0.6 · Estructuras de datos](https://renecitoiii.github.io/Ultimo-de-javier/)
 
 Cada nueva entrega se publica como la versión actual y se agrega al historial sin reemplazar los archivos históricos.
 
@@ -35,8 +40,9 @@ Cada nueva entrega se publica como la versión actual y se agrega al historial s
 - `index.html`: estructura de la página, historial y resumen final.
 - `css/styles.css`: diseño minimalista negro y adaptación a móviles.
 - `data/modulos.js`: catálogo de seis fichas, recursos y cuestionarios.
+- `data/estructuras.js`: contenido de las cinco estructuras.
 - `js/app.js`: renderizado de fichas, calificación, copas y persistencia local del progreso.
-- `versiones/`: copia funcional de la edición v0.2 y registro de entrega de la v0.4.
+- `versiones/`: ediciones archivadas v0.2 y v0.5, y registro de entrega v0.4.
 
 ## Ejecutar localmente
 
@@ -54,3 +60,4 @@ Abre <http://localhost:8000/>.
 - Validación de los campos, enlaces y tres preguntas de cada una de las seis fichas.
 - Pruebas de navegador para tarjetas, diálogo, cierre con `Escape`, feedback del quiz, copas y persistencia del progreso.
 - Revisión del diseño en móvil y escritorio.
+- Revisión de las cinco estructuras, sus ejemplos y el filtro de categorías.
