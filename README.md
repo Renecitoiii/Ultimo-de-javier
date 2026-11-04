@@ -1,6 +1,6 @@
 # HUB 3DS·B
 
-Portal de estudio para 3.º BTV Desarrollo de Software «B» del INDEL. La versión actual es **v0.6**: fichas de módulos, cuestionarios, seguimiento del progreso y una guía de estructuras de datos.
+Portal de estudio para 3.º BTV Desarrollo de Software «B» del INDEL. La versión actual es **v0.6.1**: fichas de módulos, cuestionarios, seguimiento del progreso y una guía de estructuras de datos.
 
 **Portal publicado:** <https://renecitoiii.github.io/Ultimo-de-javier/>
 
@@ -31,7 +31,8 @@ Las versiones publicadas se conservan dentro del sitio:
 - [v0.2 · Cimientos del HUB](https://renecitoiii.github.io/Ultimo-de-javier/versiones/v0.2/)
 - [v0.4 · El portal cobra vida](https://renecitoiii.github.io/Ultimo-de-javier/versiones/v0.4/)
 - [v0.5 · Estudio y progreso](https://renecitoiii.github.io/Ultimo-de-javier/versiones/v0.5/)
-- [v0.6 · Estructuras de datos](https://renecitoiii.github.io/Ultimo-de-javier/)
+- [v0.6 · Estructuras de datos](https://renecitoiii.github.io/Ultimo-de-javier/versiones/v0.6/)
+- [v0.6.1 · Recursos actualizados](https://renecitoiii.github.io/Ultimo-de-javier/)
 
 Cada nueva entrega se publica como la versión actual y se agrega al historial sin reemplazar los archivos históricos.
 
@@ -42,7 +43,7 @@ Cada nueva entrega se publica como la versión actual y se agrega al historial s
 - `data/modulos.js`: catálogo de seis fichas, recursos y cuestionarios.
 - `data/estructuras.js`: contenido de las cinco estructuras.
 - `js/app.js`: renderizado de fichas, calificación, copas y persistencia local del progreso.
-- `versiones/`: ediciones archivadas v0.2 y v0.5, y registro de entrega v0.4.
+- `versiones/`: ediciones archivadas v0.2, v0.5 y v0.6, y registro de entrega v0.4.
 
 ## Ejecutar localmente
 
