@@ -1,60 +1,56 @@
-# HUB 3DS·B - Portal de Repaso
+# HUB 3DS·B
 
-Portal estático del Día 1 para 3.º BTV Desarrollo de Software «B» del INDEL. La versión `v0.2` establece la estructura visual, el equipo y un mapa inicial de módulos, todos presentados como provisionales.
+Portal de estudio para 3.º BTV Desarrollo de Software «B» del INDEL. La versión actual es **v0.5**: una interfaz minimalista con fichas de módulos, cuestionarios, copas por aciertos y seguimiento del progreso.
 
-**GitHub Pages:** <https://renecitoiii.github.io/Ultimo-de-javier/>
+**Portal publicado:** <https://renecitoiii.github.io/Ultimo-de-javier/>
 
-## Contenido
-
-- `index.html`: página semántica y secciones de inicio, módulos, equipo y bitácora.
-- `css/styles.css`: identidad visual adaptable a pantallas móviles y de escritorio.
-- `data/modulos.js`: catálogo inicial de seis módulos.
-- `js/app.js`: renderizado de tarjetas sin librerías externas.
-- `comandos.sh`: comandos de primera publicación en GitHub.
-
-## Equipo y responsabilidades
-
-Los nombres no fueron proporcionados al preparar esta versión; los espacios quedan señalados para completarlos con el equipo.
-
-| Integrante | Rol |
-| --- | --- |
-| Por confirmar | Líder Git |
-| Por confirmar | Diseñador UI |
-| Por confirmar | Curador de contenido |
-| Por confirmar | QA |
-
-## Repartición provisional de módulos
-
-La asignación y los contenidos deben validarse con los docentes y el equipo.
+## Módulos
 
 | Docente | Módulos |
 | --- | --- |
 | Profesor Javier Mineros | Fundamentos de programación; Desarrollo de aplicaciones web; Diseño de interfaces digitales |
 | Profesor Arcides Canales | Gestión de bases de datos; Desarrollo de aplicaciones móviles; Ingeniería y calidad de software |
 
-Los períodos también están pendientes de confirmación. Los datos se editan en `data/modulos.js`.
+Cada ficha incluye resumen, aprendizajes, instrumentos, programas, herramientas, recursos y un cuestionario de tres preguntas. Los períodos académicos aún están pendientes de confirmación. Las evidencias identifican páginas de estudio del portal; no sustituyen capturas o proyectos entregados en clase.
 
-## Ejecución local
+## Progreso y cuestionarios
 
-No se requiere instalar dependencias. Desde la carpeta del proyecto, inicia un servidor estático con Python:
+- Cada respuesta correcta gana una copa; la retroalimentación explica la respuesta.
+- El resumen al final del portal presenta copas, preguntas respondidas y avance por módulo.
+- Las respuestas se guardan en el almacenamiento local del navegador, en el dispositivo actual; no se envían a un servidor.
+- **Reiniciar cuestionario** borra las respuestas de ese módulo. **Borrar todo mi progreso** borra las respuestas de todos los módulos en este dispositivo.
 
-```bash
-python -m http.server 8000
+## Historial de versiones
+
+Las versiones publicadas se conservan dentro del sitio:
+
+- [v0.2 · Cimientos del HUB](https://renecitoiii.github.io/Ultimo-de-javier/versiones/v0.2/)
+- [v0.4 · El portal cobra vida](https://renecitoiii.github.io/Ultimo-de-javier/versiones/v0.4/)
+- [v0.5 · Estudio y progreso](https://renecitoiii.github.io/Ultimo-de-javier/)
+
+Cada nueva entrega se publica como la versión actual y se agrega al historial sin reemplazar los archivos históricos.
+
+## Archivos del portal
+
+- `index.html`: estructura de la página, historial y resumen final.
+- `css/styles.css`: diseño minimalista negro y adaptación a móviles.
+- `data/modulos.js`: catálogo de seis fichas, recursos y cuestionarios.
+- `js/app.js`: renderizado de fichas, calificación, copas y persistencia local del progreso.
+- `versiones/`: copia funcional de la edición v0.2 y registro de entrega de la v0.4.
+
+## Ejecutar localmente
+
+Se necesita Node.js instalado. Desde la raíz del proyecto:
+
+```powershell
+node -e "const http=require('http'),fs=require('fs'),path=require('path');const root=process.cwd();const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8'};http.createServer((req,res)=>{let url=decodeURIComponent(new URL(req.url,'http://localhost').pathname);if(url==='/')url='/index.html';const file=path.resolve(root,'.'+url);if(!file.startsWith(root)){res.writeHead(403).end();return}fs.readFile(file,(err,data)=>{if(err){res.writeHead(404).end('No encontrado');return}res.writeHead(200,{'Content-Type':types[path.extname(file)]||'application/octet-stream'}).end(data)})}).listen(8000)"
 ```
 
-Abre <http://localhost:8000/> en el navegador. También se puede abrir `index.html` directamente, aunque un servidor local ofrece una prueba más fiel a GitHub Pages.
+Abre <http://localhost:8000/>.
 
-## Publicación en GitHub Pages
+## Pruebas de esta versión
 
-1. Crea el repositorio vacío `Renecitoiii/Ultimo-de-javier` en GitHub (sin README, licencia ni archivos iniciales).
-2. Desde la raíz de este proyecto, revisa `comandos.sh` y ejecútalo con Bash para crear el commit inicial, subir `main` y publicar la etiqueta `v0.2`.
-3. En GitHub, abre **Settings → Pages**, elige **Deploy from a branch**, selecciona `main` y la carpeta `/(root)`, y guarda.
-4. Cuando termine la publicación, verifica <https://renecitoiii.github.io/Ultimo-de-javier/>.
-
-El script está pensado para la primera publicación en un repositorio remoto vacío. Si `origin` ya existe, revisa su URL antes de ejecutar los comandos.
-
-## Registro de Prompts de IA utilizados
-
-| Uso | Prompt / alcance |
-| --- | --- |
-| Generación del portal v0.2 | Solicitud de crear el Día 1 de «Cimientos del HUB» con HTML semántico, CSS responsive, JavaScript nativo, seis módulos provisionales repartidos entre los docentes indicados, README y comandos para GitHub Pages. |
+- Sintaxis de `data/modulos.js` y `js/app.js` verificada con `node --check`.
+- Validación de los campos, enlaces y tres preguntas de cada una de las seis fichas.
+- Pruebas de navegador para tarjetas, diálogo, cierre con `Escape`, feedback del quiz, copas y persistencia del progreso.
+- Revisión del diseño en móvil y escritorio.

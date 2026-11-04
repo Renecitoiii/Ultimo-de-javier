@@ -4,11 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Portal de repaso y mapa de módulos para 3.º BTV Desarrollo de Software B, INDEL.">
-  <meta name="theme-color" content="#080d18">
-  <title>HUB 3DS·B - Cimientos del Portal</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#050505">
+  <title>HUB 3DS·B | Repaso de módulos</title>
   <link rel="stylesheet" href="css/styles.css">
   <script src="data/modulos.js" defer></script>
   <script src="js/app.js" defer></script>
@@ -23,31 +20,26 @@
           <span class="brand-school">INDEL · Desarrollo de Software</span>
         </span>
       </a>
-      <span class="version-chip"><span class="status-dot" aria-hidden="true"></span> PORTAL v0.2</span>
+      <span class="version-chip">VERSIÓN 0.5</span>
     </div>
 
     <div class="hero shell">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> 3.º BTV · DESARROLLO DE SOFTWARE «B»</p>
-        <h1>HUB 3DS·B <span>- Cimientos del Portal</span></h1>
-        <p class="hero-intro">Un espacio de repaso, recursos y seguimiento para construir conocimiento, módulo a módulo.</p>
-        <a class="primary-link" href="#mapa-modulos">Explorar el mapa <span aria-hidden="true">↘</span></a>
-      </div>
-      <div class="hero-orbit" aria-hidden="true">
-        <div class="orbit orbit-outer"></div>
-        <div class="orbit orbit-inner"></div>
-        <span class="orbit-core">3DS<br><b>·B</b></span>
-        <span class="orbit-label orbit-label-top">APRENDER</span>
-        <span class="orbit-label orbit-label-bottom">CONSTRUIR</span>
+        <p class="eyebrow">3.º BTV · DESARROLLO DE SOFTWARE «B»</p>
+        <h1>HUB 3DS·B</h1>
+        <p class="hero-intro">Un espacio de estudio para repasar los módulos del curso, practicar y medir tu progreso.</p>
+        <a class="primary-link" href="#mapa-modulos">Explorar módulos <span aria-hidden="true">↓</span></a>
       </div>
     </div>
 
     <nav class="main-nav" aria-label="Navegación principal">
       <div class="shell nav-inner">
-        <a class="nav-link active" href="#inicio"><span>01</span> Inicio</a>
-        <a class="nav-link" href="#mapa-modulos"><span>02</span> Mapa de módulos</a>
-        <a class="nav-link" href="#equipo"><span>03</span> Equipo</a>
-        <a class="nav-link" href="#bitacora"><span>04</span> Bitácora</a>
+        <a class="nav-link active" href="#inicio">Inicio</a>
+        <a class="nav-link" href="#mapa-modulos">Módulos</a>
+        <a class="nav-link" href="#equipo">Equipo</a>
+        <a class="nav-link" href="#bitacora">Bitácora</a>
+        <a class="nav-link" href="#versiones">Versiones</a>
+        <a class="nav-link nav-progress" href="#resumen">Mi progreso</a>
       </div>
     </nav>
   </header>
@@ -56,11 +48,11 @@
     <section class="modules-section shell" id="mapa-modulos" aria-labelledby="modules-title">
       <div class="section-heading">
         <div>
-          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> RUTA ACADÉMICA</p>
-          <h2 id="modules-title">Mapa de <span>módulos</span></h2>
-          <p class="section-description">Una vista inicial de los contenidos del año. La asignación y el detalle se mantienen provisionales.</p>
+          <p class="eyebrow">CONTENIDO DEL CURSO</p>
+          <h2 id="modules-title">Módulos</h2>
+          <p class="section-description">Elige un módulo para consultar sus contenidos y responder el cuestionario. Cada respuesta correcta suma una copa.</p>
         </div>
-        <span class="section-index" aria-hidden="true">01 / 04</span>
+        <span class="section-index" id="modules-count"></span>
       </div>
       <div class="module-grid" id="contenedor-modulos" aria-live="polite">
         <p class="loading-message">Cargando módulos...</p>
@@ -71,11 +63,11 @@
       <div class="shell">
         <div class="section-heading">
           <div>
-            <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> QUIÉNES LO HACEN POSIBLE</p>
-            <h2 id="team-title">Equipo <span>3DS·B</span></h2>
+            <p class="eyebrow">QUIÉNES LO HACEN POSIBLE</p>
+            <h2 id="team-title">Equipo 3DS·B</h2>
             <p class="section-description">Los nombres de integrantes se incorporarán cuando el equipo confirme la distribución.</p>
           </div>
-          <span class="section-index" aria-hidden="true">02 / 04</span>
+          <span class="section-index" aria-hidden="true">01</span>
         </div>
         <div class="team-grid">
           <article class="team-card">
@@ -105,11 +97,11 @@
     <section class="log-section shell" id="bitacora" aria-labelledby="log-title">
       <div class="section-heading">
         <div>
-          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> REGISTRO DE AVANCE</p>
-          <h2 id="log-title">Bitácora <span>del proyecto</span></h2>
-          <p class="section-description">Primeros pasos en la construcción del portal de repaso.</p>
+          <p class="eyebrow">REGISTRO DE AVANCE</p>
+          <h2 id="log-title">Bitácora del proyecto</h2>
+          <p class="section-description">Avances de diseño, contenido e interactividad del portal de repaso.</p>
         </div>
-        <span class="section-index" aria-hidden="true">03 / 04</span>
+        <span class="section-index" aria-hidden="true">02</span>
       </div>
       <ol class="timeline">
         <li class="timeline-entry">
@@ -118,15 +110,73 @@
           <h3>Cimientos del HUB</h3>
           <p>Se define la estructura inicial, la identidad visual, el mapa provisional de módulos y los roles del equipo.</p>
         </li>
+        <li class="timeline-entry">
+          <span class="timeline-marker" aria-hidden="true"></span>
+          <div class="timeline-meta"><span>DÍA 02</span><span>VERSIÓN 0.4</span></div>
+          <h3>El portal cobra vida</h3>
+          <p>Se integran las fichas dinámicas de los seis módulos, recursos de estudio, diálogo accesible y quizzes con retroalimentación inmediata.</p>
+        </li>
+        <li class="timeline-entry">
+          <span class="timeline-marker" aria-hidden="true"></span>
+          <div class="timeline-meta"><span>ACTUALIZACIÓN</span><span>VERSIÓN 0.5</span></div>
+          <h3>Estudio y progreso</h3>
+          <p>Se simplifica la interfaz, se agregan copas por respuestas correctas, seguimiento guardado y un resumen general de resultados.</p>
+        </li>
       </ol>
     </section>
+
+    <section class="versions-section shell" id="versiones" aria-labelledby="versions-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">HISTORIAL DEL PORTAL</p>
+          <h2 id="versions-title">Versiones</h2>
+          <p class="section-description">Consulta las entregas anteriores y los cambios de cada etapa.</p>
+        </div>
+      </div>
+      <ol class="version-list" id="version-list">
+        <li><a href="versiones/v0.2/">v0.2 · Cimientos del HUB</a><span>Versión inicial</span></li>
+        <li><a href="versiones/v0.4/">v0.4 · El portal cobra vida</a><span>Registro de entrega</span></li>
+        <li class="version-current"><a href="#inicio">v0.5 · Estudio y progreso</a><span>Versión actual</span></li>
+      </ol>
+    </section>
+
+    <section class="summary-section shell" id="resumen" aria-labelledby="summary-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">TU AVANCE</p>
+          <h2 id="summary-title">Resumen de estudio</h2>
+          <p class="section-description">Tus respuestas se guardan en este navegador para que puedas continuar después.</p>
+        </div>
+      </div>
+      <div class="summary-stats" id="resumen-estadisticas" aria-live="polite"></div>
+      <div class="summary-modules">
+        <h3>Progreso por módulo</h3>
+        <div id="resumen-modulos" class="summary-module-list" aria-live="polite"></div>
+      </div>
+      <p class="summary-note">Cada copa representa una respuesta correcta. El progreso se almacena solo en este dispositivo.</p>
+      <p class="summary-note" id="progress-save-status" aria-live="polite"></p>
+    </section>
   </main>
+
+  <dialog id="modal-ficha" aria-labelledby="modal-titulo" aria-describedby="modal-descripcion">
+    <div class="dialog-panel">
+      <header class="dialog-header">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> FICHA DE MÓDULO</p>
+          <h2 id="modal-titulo">Detalle del módulo</h2>
+        </div>
+        <button class="dialog-close" id="modal-cerrar" type="button" aria-label="Cerrar ficha">×</button>
+      </header>
+      <p class="dialog-description" id="modal-descripcion">Resumen, aprendizajes, instrumentos, herramientas, recursos, evidencias y quiz del módulo seleccionado.</p>
+      <div class="ficha-content" id="contenido-ficha"></div>
+    </div>
+  </dialog>
 
   <footer class="site-footer">
     <div class="shell footer-inner">
       <a class="footer-brand" href="#inicio">HUB <strong>3DS·B</strong></a>
       <p>3.º BTV Desarrollo de Software «B» <span aria-hidden="true">·</span> INDEL</p>
-      <p class="footer-version">CIMIENTOS DEL PORTAL <span>v0.2</span></p>
+      <p class="footer-version">HUB 3DS·B <span>v0.5</span></p>
     </div>
   </footer>
 </body>
