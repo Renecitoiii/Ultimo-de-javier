@@ -50,5 +50,18 @@ const ESTRUCTURAS_DATOS = [
       lenguaje: "JavaScript",
       codigo: "const turnos = [];\nturnos.push(\"Ana\");\nturnos.push(\"Luis\");\nconst siguienteTurno = turnos.shift();\nconsole.log(siguienteTurno);"
     }
+  },
+  {
+    id: "arbol-binario",
+    nombre: "Árbol binario",
+    categoria: "Jerárquica",
+    resumen: "Estructura jerárquica de nodos en la que cada nodo tiene como máximo un hijo izquierdo y uno derecho.",
+    funcionamiento: "Un árbol de búsqueda binaria organiza los valores menores a la izquierda y los mayores a la derecha. Buscar, insertar y eliminar pueden tomar O(log n) si está balanceado y O(n) si se degrada a una cadena.",
+    ventajas: ["Representa jerarquías y permite búsquedas ordenadas.", "Los recorridos preorden, inorden y postorden visitan los nodos en distinto orden."],
+    consideraciones: ["Sin balanceo, algunas operaciones pueden degradarse a O(n).", "La implementación necesita manejar nodos y casos de árbol vacío."],
+    ejemplo: {
+      lenguaje: "JavaScript",
+      codigo: "const arbol = {\n  valor: 8,\n  izquierda: { valor: 4, izquierda: null, derecha: null },\n  derecha: { valor: 12, izquierda: null, derecha: null }\n};\nconsole.log(arbol.izquierda.valor);"
+    }
   }
 ];
