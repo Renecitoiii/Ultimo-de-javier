@@ -1,6 +1,6 @@
 # HUB 3DS·B
 
-Portal de estudio para 3.º BTV Desarrollo de Software «B» del INDEL. La versión actual es **v0.6.1**: fichas de módulos, cuestionarios, seguimiento del progreso y una guía de estructuras de datos.
+Portal de estudio para 3.º BTV Desarrollo de Software «B» del INDEL. La versión actual es **v0.7**: fichas de módulos, cuestionarios, seguimiento del progreso, estructuras de datos y un fondo ambiental animado.
 
 **Portal publicado:** <https://renecitoiii.github.io/Ultimo-de-javier/>
 
@@ -32,14 +32,15 @@ Las versiones publicadas se conservan dentro del sitio:
 - [v0.4 · El portal cobra vida](https://renecitoiii.github.io/Ultimo-de-javier/versiones/v0.4/)
 - [v0.5 · Estudio y progreso](https://renecitoiii.github.io/Ultimo-de-javier/versiones/v0.5/)
 - [v0.6 · Estructuras de datos](https://renecitoiii.github.io/Ultimo-de-javier/versiones/v0.6/)
-- [v0.6.1 · Recursos actualizados](https://renecitoiii.github.io/Ultimo-de-javier/)
+- [v0.6.1 · Recursos actualizados](https://renecitoiii.github.io/Ultimo-de-javier/versiones/v0.6.1/)
+- [v0.7 · Fondo ambiental](https://renecitoiii.github.io/Ultimo-de-javier/)
 
 Cada nueva entrega se publica como la versión actual y se agrega al historial sin reemplazar los archivos históricos.
 
 ## Archivos del portal
 
 - `index.html`: estructura de la página, historial y resumen final.
-- `css/styles.css`: diseño minimalista negro y adaptación a móviles.
+- `css/styles.css`: diseño oscuro en tonos verde petróleo y azul pizarra, fondo animado de baja intensidad y adaptación a móviles.
 - `data/modulos.js`: catálogo de seis fichas, recursos y cuestionarios.
 - `data/estructuras.js`: contenido de las cinco estructuras.
 - `js/app.js`: renderizado de fichas, calificación, copas y persistencia local del progreso.
@@ -62,3 +63,4 @@ Abre <http://localhost:8000/>.
 - Pruebas de navegador para tarjetas, diálogo, cierre con `Escape`, feedback del quiz, copas y persistencia del progreso.
 - Revisión del diseño en móvil y escritorio.
 - Revisión de las cinco estructuras, sus ejemplos y el filtro de categorías.
+- Verificación del fondo animado y de la preferencia `prefers-reduced-motion`.
